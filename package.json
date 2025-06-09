@@ -1,0 +1,42 @@
+{
+  "name": "fastify-bus",
+  "version": "0.1.0",
+  "description": "Fastify plugin for a message bus that allows for event-driven communication between different parts of the application.",
+  "main": "index.js",
+  "type": "commonjs",
+  "types": "index.d.ts",
+  "repository": "https://github.com/salmanm/fastify-bus.git",
+  "author": "Salman Mitha <SalmanMitha@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "pnpm unit && pnpm typescript",
+    "unit": "c8 --100 node --test",
+    "typescript": "tsd",
+    "lint": "eslint --ext .ts,.js .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "emittery": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.19",
+    "c8": "^10.1.3",
+    "eslint": "^9.27.0",
+    "fastify": "^5.3.3",
+    "neostandard": "^0.12.1",
+    "tsd": "^0.32.0",
+    "typescript": "^5.8.3"
+  },
+  "keywords": [
+    "fastify",
+    "message",
+    "event",
+    "bus",
+    "plugin"
+  ],
+  "packageManager": "pnpm@10.11.0",
+  "pnpm": {
+    "overrides": {},
+    "ignoredBuiltDependencies": []
+  }
+}
