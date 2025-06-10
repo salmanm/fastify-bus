@@ -62,4 +62,6 @@ const fastifyBus = (fastify, _, done) => {
 // Avoid encapsulation
 fastifyBus[Symbol.for('skip-override')] = true
 
+module.exports = fastifyBus
 module.exports.fastifyBus = fastifyBus
+module.exports.default = fastifyBus
