@@ -4,8 +4,6 @@ A scoped, type-safe internal event bus for Fastify plugins. Keeps communication 
 
 This plugin gives your Fastify app a clean way to let plugins talk to each other using event emitters, without reaching for global events or awkward `.emit()` chains on `fastify.server`.
 
----
-
 ## 💡 Why?
 
 Let’s say you have:
@@ -37,8 +35,6 @@ configBus.on('updated', (config) => {
 
 No globals. No tight coupling. Just scoped communication.
 
----
-
 ## 🚀 Installation
 
 ```bash
@@ -46,8 +42,6 @@ npm install fastify-bus
 # or
 pnpm add fastify-bus
 ```
-
----
 
 ## 🛠 Usage
 
@@ -75,8 +69,6 @@ fastify.bus.get('config').on('updated', (data) => {
   console.log('Config updated:', data)
 })
 ```
-
----
 
 ## ✅ TypeScript Support
 
@@ -106,8 +98,6 @@ declare module 'fastify-bus' {
 - ✅ Type-safe `on`, `once`, `off` handlers
 - ✅ IDE autocomplete and error checking
 
----
-
 ## 📚 API
 
 ### `fastify.bus.register(namespace): EventBus`
@@ -130,8 +120,6 @@ Returns true if the namespace has been registered.
 ### `fastify.bus.inspect(): string[]`
 
 Returns a list of all registered namespaces.
-
----
 
 ## 🧰 EventBus API
 
@@ -157,8 +145,6 @@ Emit an event. Returns a promise that resolves after all handlers run.
 
 Removes all listeners from the bus.
 
----
-
 ## ⚠️ Rules & Best Practices
 
 * Namespaces should be unique.
@@ -167,8 +153,6 @@ Removes all listeners from the bus.
 * If you're emitting events right after startup, use `fastify.ready()` or `setImmediate()` to ensure all listeners are in place.
 * To avoid cyclic plugin dependencies, split plugin responsibilities (e.g. fetch config vs subscribe to changes).
 * Keep the events local — don’t make this your app’s state manager
-
----
 
 ## ✅ Example Plugin Communication
 
@@ -183,8 +167,6 @@ fastify.bus.get('cache').on('invalidated', (payload) => {
   console.log(`Clearing ${payload.key} from memory`)
 })
 ```
-
----
 
 ## 📄 License
 
